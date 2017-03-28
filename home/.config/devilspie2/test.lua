@@ -13,11 +13,20 @@ if (get_application_name()=="tilix") then
   set_window_workspace(1)
   set_on_top()
   maximize()
--- else
-  -- set_window_workspace(2)
-end
 
--- Make Iceweasel always start maximized.
-if (get_application_name()=="Iceweasel") then
-  maximize()
+elseif (get_application_name():find("Google Chrome") ~= nil) then
+  set_window_workspace(2)
+    change_workspace(2)
+
+elseif (get_application_name():find("IntelliJ IDEA") ~= nil) then
+  set_window_workspace(3)
+  change_workspace(3)
+
+elseif (get_application_name():find("^Slack") ~= nil) then
+  set_window_workspace(4)
+    change_workspace(4)
+
+else
+  set_window_workspace(5)
+    change_workspace(5)
 end
