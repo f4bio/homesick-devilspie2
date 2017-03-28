@@ -14,19 +14,20 @@ if (get_application_name()=="tilix") then
   set_on_top()
   maximize()
 
-elseif (get_application_name():find("Google Chrome") ~= nil) then
-  set_window_workspace(2)
-    change_workspace(2)
+-- elseif (get_application_name():find("Google Chrome") ~= nil) then
+--   set_window_workspace(2)
+--     change_workspace(2)
 
-elseif (get_application_name():find("IntelliJ IDEA") ~= nil) then
-  set_window_workspace(3)
-  change_workspace(3)
+-- elseif (get_application_name():find("IntelliJ IDEA")) then
+  -- debug_print("moving idea to workspace 3")
+  -- set_window_workspace(3)
+  -- change_workspace(3)
 
-elseif (get_application_name():find("^Slack") ~= nil) then
-  set_window_workspace(4)
-    change_workspace(4)
+-- elseif (get_application_name():find("^Slack") ~= nil) then
+--   set_window_workspace(4)
+--     change_workspace(4)
 
-else
-  set_window_workspace(5)
-    change_workspace(5)
+-- else
+--   set_window_workspace(5)
+--   change_workspace(5)
 end
