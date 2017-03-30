@@ -1,6 +1,6 @@
 [Unit]
 Description=Devilspie2
-After=graphical.target
+After=network.target
 
 [Service]
 ExecStart=/usr/bin/devilspie2
