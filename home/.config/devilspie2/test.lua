@@ -7,7 +7,7 @@ local workspace_browser = 3
 local workspace_chat = 4
 local workspace_free = 5
 local workspace_next = 3
-local workspace_current = (tonumber(get_window_property("_NET_WM_DESKTOP"))+1)
+local workspace_current = (tonumber(get_window_property("_NET_WM_DESKTOP")) + 1)
 local window_type_current = get_window_type()
 
 debug_print("\n\n----------------------------------")
@@ -72,11 +72,11 @@ end
 
 -- OTHER
 if (workspace_current < 2) then
-	debug_print("moving '".. get_window_name() .. "' to free workspace: " .. workspace_free)
+	debug_print("moving '".. get_window_name() .. "' to free workspace(" .. workspace_free ..")")
   set_window_workspace(workspace_free)
 	change_workspace(workspace_free)
 else
-	debug_print("moving '".. get_window_name() .. "' to current workspace: " .. workspace_current)
+	debug_print("moving '".. get_window_name() .. "' to current workspace(" .. workspace_current .. ")")
   set_window_workspace((workspace_current))
 	change_workspace(workspace_current)
 end
