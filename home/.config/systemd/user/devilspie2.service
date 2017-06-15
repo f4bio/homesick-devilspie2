@@ -1,6 +1,6 @@
 [Unit]
 Description=Devilspie2
-After=systemd-logind.service
+After=gvfs-daemon.service
 
 [Service]
 ExecStart=/usr/bin/devilspie2

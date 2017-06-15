@@ -19,7 +19,7 @@ debug_print("Current workspace-type: " .. window_type_current)
 
 -- CONKY
 if (window_type_current=="WINDOW_TYPE_DESKTOP") then
-	return
+  return
 end
 
 -- TERMINAL
@@ -27,56 +27,61 @@ if (get_application_name()=="tilix") then
   debug_print("moving 'tilix' to terminal workspace(" .. workspace_terminal .. ")")
   set_window_workspace(workspace_terminal)
   maximize()
-	return
+  return
 end
 
 -- DEV TOOLS
 if (get_application_name():find("IntelliJ IDEA")) then
   debug_print("moving 'idea' to devtools workspace(" .. workspace_devtools .. ")")
   set_window_workspace(workspace_devtools)
-	-- undecorate_window()
-	maximize()
-	change_workspace(workspace_devtools)
-	return
+  -- undecorate_window()
+  maximize()
+  change_workspace(workspace_devtools)
+  return
 end
 if (get_application_name()=="Settings") then -- stupid hack...
-	debug_print("moving 'idea's settings to devtools workspace(" .. workspace_devtools .. ")")
-	set_window_workspace(workspace_devtools)
-	return
+  debug_print("moving 'idea's settings to devtools workspace(" .. workspace_devtools .. ")")
+  set_window_workspace(workspace_devtools)
+  return
 end
 
 -- BROWSER
 if (get_application_name():find("[Cc]hrome$")) then
-	debug_print("moving 'chrome' to browser workspace(" .. workspace_browser .. ")")
+  debug_print("moving 'chrome' to browser workspace(" .. workspace_browser .. ")")
   set_window_workspace(workspace_browser)
-	change_workspace(workspace_browser)
-	return
+  change_workspace(workspace_browser)
+  return
 end
 
 -- CHAT
 if (get_application_name():find("^Slack")) then
-	debug_print("moving 'slack' to chat workspace(" .. workspace_chat .. ")")
+  debug_print("moving 'slack' to chat workspace(" .. workspace_chat .. ")")
   set_window_workspace(workspace_chat)
-	return
+  return
 end
-if (get_application_name():find("^HexChat")) then
-	debug_print("moving 'hexchat' to chat workspace(" .. workspace_chat .. ")")
+if (get_application_name():find("^[Ss]kype")) then
+  debug_print("moving 'skype' to chat workspace(" .. workspace_chat .. ")")
   set_window_workspace(workspace_chat)
-	return
+  return
+end
+if (get_application_name()=="hexchat") then
+  debug_print("moving 'hexchat' to chat workspace(" .. workspace_chat .. ")")
+  set_window_workspace(workspace_chat)
+  return
 end
 if (get_application_name():find("^Empathy")) then
-	debug_print("moving 'empathy' to chat workspace(" .. workspace_chat .. ")")
+  debug_print("moving 'empathy' to chat workspace(" .. workspace_chat .. ")")
   set_window_workspace(workspace_chat)
-	return
+  return
 end
 
 -- OTHER
 if (workspace_current < 2) then
-	debug_print("moving '".. get_window_name() .. "' to free workspace(" .. workspace_free ..")")
+  debug_print("moving '".. get_window_name() .. "' to free workspace(" .. workspace_free ..")")
   set_window_workspace(workspace_free)
-	change_workspace(workspace_free)
+  change_workspace(workspace_free)
 else
-	debug_print("moving '".. get_window_name() .. "' to current workspace(" .. workspace_current .. ")")
+  debug_print("moving '".. get_window_name() .. "' to current workspace(" .. workspace_current .. ")")
   set_window_workspace((workspace_current))
-	change_workspace(workspace_current)
+  change_workspace(workspace_current)
 end
